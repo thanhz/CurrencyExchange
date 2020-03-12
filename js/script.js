@@ -28,3 +28,4 @@ function swapCurrency() {
 currencyOne.addEventListener('change', getExchangeRate);
 currencyTwo.addEventListener('change', getExchangeRate);
 swap.addEventListener('click', swapCurrency);
+getExchangeRate();
