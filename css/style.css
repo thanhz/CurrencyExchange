@@ -33,11 +33,11 @@ img {
 
 h1 {
   color: var(--primary-color);
+  margin-bottom: 1em;
 }
 
 p {
   text-align: center;
-  padding-top: 2em;
 }
 
 .btn {
@@ -49,11 +49,15 @@ p {
   padding: 5px 12px;
 }
 
-select {
+select,
+#input {
   padding: 10px 20px 10px 10px;
-  appearance: none;
   border: 1px solid #bdc3c7;
   font-size: 20px;
+}
+
+select {
+  appearance: none;
   background-image: url('https://image.flaticon.com/icons/svg/60/60995.svg');
   background-position: right 5px top 45%, 0, 0;
   background-size: 10px;
@@ -62,9 +66,8 @@ select {
   -webkit-appearance: none;
 }
 
-.rate {
-  color: var(--primary-color);
-  font-size: 20px;
+#input {
+  width: 80px;
 }
 
 header,
@@ -74,9 +77,18 @@ footer {
   padding: 1em;
 }
 
-header,
-footer {
-  grid-column: 1 / 4;
+.quantity-one {
+  grid-column: 1 / 2;
+}
+
+.quantity-two {
+  grid-column: 3 / 4;
+  color: var(--primary-color);
+  font-size: 20px;
+}
+
+header {
+  grid-column: 1 / span 4;
 }
 
 /* Select all elements where parent is .grid */

@@ -1,7 +1,8 @@
 const currencyOne = document.getElementById('currency-one');
 const currencyTwo = document.getElementById('currency-two');
-const rateElement = document.getElementById('rate');
 const swap = document.getElementById('swap');
+const quantityOne = document.getElementById('input');
+const quantityTwo = document.getElementById('quantity-two');
 
 function getExchangeRate() {
 
@@ -10,7 +11,7 @@ function getExchangeRate() {
         json.json().then(data => {
 
             const currencyTwoRate = data.rates[currencyTwo.value];
-            rateElement.textContent = `1 ${currencyOne.value} = ${currencyTwoRate} ${currencyTwo.value}`
+            quantityTwo.textContent = (quantityOne.value * currencyTwoRate).toFixed(2);
         })
     }).catch(e => console.log(e));
 
@@ -24,8 +25,8 @@ function swapCurrency() {
     getExchangeRate();
 }
 
-
 currencyOne.addEventListener('change', getExchangeRate);
 currencyTwo.addEventListener('change', getExchangeRate);
+quantityOne.addEventListener('change', getExchangeRate);
 swap.addEventListener('click', swapCurrency);
 getExchangeRate();
